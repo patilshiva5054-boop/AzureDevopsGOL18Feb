@@ -9,6 +9,6 @@ trigger:
 extends:
   template: ./templates/demo-parameters.yaml
   parameters:
-    branch: 'mster'
+    branch: 'master'
     agentvmImage: 'ubuntu-18.04'
     jdkversion: '1.8'
