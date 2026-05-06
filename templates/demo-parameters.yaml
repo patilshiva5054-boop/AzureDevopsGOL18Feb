@@ -1,16 +1,25 @@
+trigger:
+- main
+
 parameters:
   - name: branch
     displayName: Git branch
     type: string 
     default: 'main'
+
   - name: agentvmImage
     displayName: 'Agent VM Image'
     type: string
-    default: 'ubuntu'
+    default: 'ubuntu-latest'
+
   - name: jdkVersion
     displayName: 'Java Version'
     type: string
-    default: '1.11'
+    default: '11'
+
+pool:
+  vmImage: ${{ parameters.agentvmImage }}
 
 steps:
-  - script: echo hello
+  - script: echo "Hello from pipeline"
+    displayName: Print Hello
