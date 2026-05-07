@@ -1,0 +1,8 @@
+steps:
+  - task: Maven@3
+    inputs:
+      mavenPOMFile: 'pom.xml'
+      goals: 'package'
+      publishJUNITResults: yes
+      testResultFiles: '**/surefire-reports/TEST-*.XML'
+      jdkVersionOption: '1.8'
