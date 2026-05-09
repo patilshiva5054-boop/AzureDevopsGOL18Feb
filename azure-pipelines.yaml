@@ -8,4 +8,5 @@ trigger:
 
 steps:
   - template: ./templates/maven-build-reusable.yaml
-  
+    parameters:
+      jdkVersion: '1.8'

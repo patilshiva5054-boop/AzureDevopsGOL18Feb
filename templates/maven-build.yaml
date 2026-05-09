@@ -14,3 +14,9 @@ parameters:
 
 steps:
   - task:Maven@3
+    inputs:
+      mavenPOMFile: 'pom.xml'
+      goals: 'package'
+      publishJUnitResults: yes
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      jdkVesrionOption: "${{ parameters.jdkVersion }}"
