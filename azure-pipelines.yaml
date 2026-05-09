@@ -8,3 +8,4 @@ trigger:
 
 steps:
   - template: ./templates/maven-build-reusable.yaml
+  
