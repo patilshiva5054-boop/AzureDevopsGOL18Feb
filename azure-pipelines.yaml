@@ -1,21 +1,21 @@
----
 pool:
-  name: 'Azure Pipelines'
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 trigger:
   - master
+
 resources:
   repositories:
-    - repository: 'azuredevopstemplates'
-      name: 'patilshiva5054-boop/AzureDevopsReusableTemplates'
-      endpoint: 'github.com_patilshiva5054-boop'
-      type: 'github'
-      ref: 'refs/heads/main'
+    - repository: azuredevopstemplates
+      type: github
+      name: patilshiva5054-boop/AzureDevopsReusableTemplates
+      endpoint: github.com_patilshiva5054-boop
+      ref: refs/heads/main
+
 steps:
   - template: java/maven-build-simple.yaml@azuredevopstemplates
     parameters:
       jdkVersion: '1.8'
-      pathToPublish: 'gameoflife-web/target/gameoflife.war
-      authenticatMavenFeed: true
+      pathToPublish: 'gameoflife-web/target/gameoflife.war'
+      authenticateMavenFeed: true
       goal: 'deploy'
