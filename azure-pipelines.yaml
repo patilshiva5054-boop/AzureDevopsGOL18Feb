@@ -5,8 +5,14 @@ pool:
 
 trigger:
   - master
-
+resources:
+  repositories:
+    - repository: 'azuredevopstemplates'
+      name: 'patilshiva5054-boop/AzureDevopsReusableTemplates'
+      endpoint: 'github.com_patilshiva5054-boop'
+      type: 'github'
+      ref: 'refs/heads/main'
 steps:
-  - template: ./templates/maven-build-reusable.yaml
+  - template: java/maven-build-simple.yaml@azuredevopstemplates
     parameters:
       jdkVersion: '1.8'
